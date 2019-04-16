@@ -1,9 +1,12 @@
 <?php
-/**
- * Created by PhpStorm.
- * User: moon
- * Date: 2019-04-16
- * Time: 16:50
+
+/*
+ * This file is part of the shiran/easyip.
+ *
+ * (c) shiran <iymiym@icloud.com>
+ *
+ * This source file is subject to the MIT license that is bundled
+ * with this source code in the file LICENSE.
  */
 
 namespace Shiran\EasyIp\Providers\Amap;
@@ -16,14 +19,18 @@ use Shiran\EasyIp\Exception\ReferenceException;
 class Amap extends Base implements Resolvable
 {
     const PROVIDER_NAME = 'Amap';
+
     const URL = 'https://restapi.amap.com/v3/ip?parameters';
 
     protected $ip;
+
     protected $response;
 
     /**
      * @param string $ip
+     *
      * @return array
+     *
      * @throws \Exception
      */
     public function parse(string $ip)
@@ -49,11 +56,12 @@ class Amap extends Base implements Resolvable
 
     /**
      * @return $this
+     *
      * @throws ReferenceException
      */
     public function check()
     {
-        if ($this->response['status'] != 1) {
+        if (1 != $this->response['status']) {
             throw new ReferenceException($this->response['message']);
         }
 
@@ -76,7 +84,7 @@ class Amap extends Base implements Resolvable
             'province' => $result['province'],
             'city' => $result['city'],
             'district' => '',
-            'implode' => ($result['province'] ? '中国' : '') . $result['province'] . $result['city'],
+            'implode' => ($result['province'] ? '中国' : '').$result['province'].$result['city'],
             'location' => [
                 'latitude' => $location[1] ?? '',
                 'longitude' => $location[0] ?? '',
