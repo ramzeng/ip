@@ -1,6 +1,8 @@
 <h1 align="center"> easyip </h1>
 
-<p align="center"> .</p>
+<p align="center"> IP SDK.</p>
+
+![StyleCI build status](https://github.styleci.io/repos/181667367/shield) 
 
 
 ## Installing
