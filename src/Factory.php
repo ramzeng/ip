@@ -1,9 +1,12 @@
 <?php
-/**
- * Created by PhpStorm.
- * User: moon
- * Date: 2019-03-11
- * Time: 13:52
+
+/*
+ * This file is part of the shiran/easyip.
+ *
+ * (c) shiran <iymiym@icloud.com>
+ *
+ * This source file is subject to the MIT license that is bundled
+ * with this source code in the file LICENSE.
  */
 
 namespace Shiran\EasyIp;
@@ -16,6 +19,7 @@ class Factory
 
     /**
      * Factory constructor.
+     *
      * @param array $config
      */
     public function __construct(array $config)
@@ -26,7 +30,9 @@ class Factory
     /**
      * @param $name
      * @param $arguments
+     *
      * @return mixed
+     *
      * @throws InvalidArgumentException
      */
     public function make($name, $arguments)
@@ -42,12 +48,13 @@ class Factory
 
     /**
      * @param string $provider
+     *
      * @return string
      */
     public static function formatClassName(string $provider)
     {
         $provider = ucfirst($provider);
 
-        return __NAMESPACE__ . "\\Providers\\{$provider}\\{$provider}";
+        return __NAMESPACE__."\\Providers\\{$provider}\\{$provider}";
     }
 }

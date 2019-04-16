@@ -1,9 +1,12 @@
 <?php
-/**
- * Created by PhpStorm.
- * User: moon
- * Date: 2019-04-16
- * Time: 14:16
+
+/*
+ * This file is part of the shiran/easyip.
+ *
+ * (c) shiran <iymiym@icloud.com>
+ *
+ * This source file is subject to the MIT license that is bundled
+ * with this source code in the file LICENSE.
  */
 
 namespace Shiran\EasyIp\Providers\Tencent;
@@ -16,14 +19,18 @@ use Shiran\EasyIp\Exception\ReferenceException;
 class Tencent extends Base implements Resolvable
 {
     const PROVIDER_NAME = 'Tencent';
+
     const URL = 'https://apis.map.qq.com/ws/location/v1/ip';
 
     protected $ip;
+
     protected $response;
 
     /**
      * @param string $ip
+     *
      * @return array
+     *
      * @throws \Exception
      */
     public function parse(string $ip)
@@ -49,11 +56,12 @@ class Tencent extends Base implements Resolvable
 
     /**
      * @return $this
+     *
      * @throws ReferenceException
      */
     public function check()
     {
-        if ($this->response['status'] !== 0) {
+        if (0 !== $this->response['status']) {
             throw new ReferenceException($this->response['message']);
         }
 

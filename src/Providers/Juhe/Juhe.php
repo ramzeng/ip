@@ -1,9 +1,12 @@
 <?php
-/**
- * Created by PhpStorm.
- * User: moon
- * Date: 2019-04-16
- * Time: 17:40
+
+/*
+ * This file is part of the shiran/easyip.
+ *
+ * (c) shiran <iymiym@icloud.com>
+ *
+ * This source file is subject to the MIT license that is bundled
+ * with this source code in the file LICENSE.
  */
 
 namespace Shiran\EasyIp\Providers\Juhe;
@@ -16,14 +19,18 @@ use Shiran\EasyIp\Exception\ReferenceException;
 class Juhe extends Base implements Resolvable
 {
     const PROVIDER_NAME = 'Juhe';
+
     const URL = 'http://apis.juhe.cn/ip/ipNew';
 
     protected $ip;
+
     protected $response;
 
     /**
      * @param string $ip
+     *
      * @return array
+     *
      * @throws \Exception
      */
     public function parse(string $ip)
@@ -49,11 +56,12 @@ class Juhe extends Base implements Resolvable
 
     /**
      * @return $this
+     *
      * @throws ReferenceException
      */
     public function check()
     {
-        if ($this->response['resultcode'] != 200) {
+        if (200 != $this->response['resultcode']) {
             throw new ReferenceException($this->response['reason']);
         }
 
