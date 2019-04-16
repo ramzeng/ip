@@ -70,13 +70,13 @@ app('EasyIp')->parse('')
 ```
 [
      "provider" => "Tencent",
-     "ip" => "119.123.73.19",
-     "postcode" => 440306,
+     "ip" => "",
+     "postcode" => 440300,
      "country" => "中国",
      "province" => "广东省",
      "city" => "深圳市",
-     "district" => "宝安区",
-     "implode" => "中国广东省深圳市宝安区",
+     "district" => "南山区",
+     "implode" => "中国广东省深圳市南山区",
      "location" => [
        "latitude" => 22.55329,
        "longitude" => 113.88308,
