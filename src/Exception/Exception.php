@@ -1,14 +1,16 @@
 <?php
-/**
- * Created by PhpStorm.
- * User: moon
- * Date: 2019-02-21
- * Time: 14:59
+
+/*
+ * This file is part of the shiran/easyip.
+ *
+ * (c) shiran <iymiym@icloud.com>
+ *
+ * This source file is subject to the MIT license that is bundled
+ * with this source code in the file LICENSE.
  */
 
 namespace Shiran\EasyIp\Exception;
 
 class Exception extends \Exception
 {
-
 }

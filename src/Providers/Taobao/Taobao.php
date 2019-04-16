@@ -1,9 +1,12 @@
 <?php
-/**
- * Created by PhpStorm.
- * User: moon
- * Date: 2019-04-16
- * Time: 17:22
+
+/*
+ * This file is part of the shiran/easyip.
+ *
+ * (c) shiran <iymiym@icloud.com>
+ *
+ * This source file is subject to the MIT license that is bundled
+ * with this source code in the file LICENSE.
  */
 
 namespace Shiran\EasyIp\Providers\Taobao;
@@ -16,14 +19,18 @@ use Shiran\EasyIp\Contracts\Resolvable;
 class Taobao extends Base implements Resolvable
 {
     const PROVIDER_NAME = 'Taobao';
+
     const URL = 'http://ip.taobao.com/service/getIpInfo.php';
 
     protected $ip;
+
     protected $response;
 
     /**
      * @param string $ip
+     *
      * @return array
+     *
      * @throws \Exception
      */
     public function parse(string $ip)
@@ -48,6 +55,7 @@ class Taobao extends Base implements Resolvable
 
     /**
      * @return $this
+     *
      * @throws ReferenceException
      */
     public function check()
@@ -74,7 +82,7 @@ class Taobao extends Base implements Resolvable
             'province' => $result['region'],
             'city' => $result['city'],
             'district' => $result['area'],
-            'implode' => $result['country'] . $result['region'] . $result['city'],
+            'implode' => $result['country'].$result['region'].$result['city'],
             'location' => [
                 'latitude' => '',
                 'longitude' => '',

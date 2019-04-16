@@ -1,6 +1,8 @@
 <h1 align="center"> easyip </h1>
 
-<p align="center"> .</p>
+<p align="center"> IP SDK.</p>
+
+![StyleCI build status](https://github.styleci.io/repos/181667367/shield) 
 
 
 ## Installing
@@ -9,19 +11,80 @@
 $ composer require shiran/easyip -vvv
 ```
 
+## Description
+目前支持 5 家平台  
+* 腾讯 [Tencent](https://lbs.qq.com/webservice_v1/guide-ip.html)
+* 淘宝 [Taobao](http://ip.taobao.com/)
+* 百度 [Baidu](http://lbsyun.baidu.com/index.php?title=webapi/ip-api)
+* 聚合 [Juhe](https://www.juhe.cn/docs/api/id/1)
+* 高德 [Amap](https://lbs.amap.com/api/webservice/guide/api/ipconfig)
+
 ## Usage
 
-TODO
+```php
+$config = [
+    'provider' => 'tencent',
+    'tencent' => [
+        'key' => '',
+    ],
+    
+    ...
+    ...
+    ...
+];
 
-## Contributing
+$ip = new \Shiran\EasyIp\EasyIp($config);
 
-You can contribute in one of three ways:
+$result = $ip->parse('');
+```
 
-1. File bug reports using the [issue tracker](https://github.com/shiran/easyip/issues).
-2. Answer questions or fix bugs on the [issue tracker](https://github.com/shiran/easyip/issues).
-3. Contribute new features or update the wiki.
+### 在 Laravel 中使用
 
-_The code contribution process is not very formal. You just need to make sure that you follow the PSR-0, PSR-1, and PSR-2 coding guidelines. Any new code contributions must be accompanied by unit tests where applicable._
+```bash
+php artisan vendor:publish --provider="Shiran\EasyIp\ServiceProvider"
+```
+
+进入 config/easyip.php
+```php
+return [
+    'provider' => 'tencent',
+
+
+    'tencent' => [
+        'key' => '',
+    ],
+    
+    ...
+    ...
+    ...
+]
+```
+
+在 tinker 中测试
+```bash
+app('EasyIp')->parse('')
+
+...
+...
+```
+
+数据返回格式
+```
+[
+     "provider" => "Tencent",
+     "ip" => "",
+     "postcode" => 440300,
+     "country" => "中国",
+     "province" => "广东省",
+     "city" => "深圳市",
+     "district" => "南山区",
+     "implode" => "中国广东省深圳市南山区",
+     "location" => [
+       "latitude" => 22.55329,
+       "longitude" => 113.88308,
+     ],
+]
+```
 
 ## License
 

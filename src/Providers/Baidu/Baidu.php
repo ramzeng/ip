@@ -1,9 +1,12 @@
 <?php
-/**
- * Created by PhpStorm.
- * User: moon
- * Date: 2019-04-16
- * Time: 16:08
+
+/*
+ * This file is part of the shiran/easyip.
+ *
+ * (c) shiran <iymiym@icloud.com>
+ *
+ * This source file is subject to the MIT license that is bundled
+ * with this source code in the file LICENSE.
  */
 
 namespace Shiran\EasyIp\Providers\Baidu;
@@ -16,14 +19,18 @@ use Shiran\EasyIp\Exception\ReferenceException;
 class Baidu extends Base implements Resolvable
 {
     const PROVIDER_NAME = 'Baidu';
+
     const URL = 'https://api.map.baidu.com/location/ip';
 
     protected $ip;
+
     protected $response;
 
     /**
      * @param string $ip
+     *
      * @return array
+     *
      * @throws \Exception
      */
     public function parse(string $ip)
@@ -50,11 +57,12 @@ class Baidu extends Base implements Resolvable
 
     /**
      * @return $this
+     *
      * @throws ReferenceException
      */
     public function check()
     {
-        if ($this->response['status'] !== 0) {
+        if (0 !== $this->response['status']) {
             throw new ReferenceException($this->response['message']);
         }
 
@@ -68,7 +76,7 @@ class Baidu extends Base implements Resolvable
     {
         $result = $this->response['content'];
 
-        $country = strpos($this->response['address'], 'CN') !== false ? '中国' : '';
+        $country = false !== strpos($this->response['address'], 'CN') ? '中国' : '';
 
         return [
             'provider' => static::PROVIDER_NAME,
@@ -78,7 +86,7 @@ class Baidu extends Base implements Resolvable
             'province' => $result['address_detail']['province'],
             'city' => $result['address_detail']['city'],
             'district' => $result['address_detail']['district'] ?: '',
-            'implode' => ($country ? '中国' : '') . $result['address'],
+            'implode' => ($country ? '中国' : '').$result['address'],
             'location' => [
                 'latitude' => $result['point']['y'],
                 'longitude' => $result['point']['x'],
