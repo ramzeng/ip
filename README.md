@@ -9,6 +9,14 @@
 $ composer require shiran/easyip -vvv
 ```
 
+## Description
+目前支持 5 家平台  
+* 腾讯 [Tencent]('https://lbs.qq.com/webservice_v1/guide-ip.html')
+* 淘宝 [Taobao]('http://ip.taobao.com/')
+* 百度 [Baidu]('http://lbsyun.baidu.com/index.php?title=webapi/ip-api')
+* 聚合 [Juhe]('https://www.juhe.cn/docs/api/id/1')
+* 高德 [Amap]('https://lbs.amap.com/api/webservice/guide/api/ipconfig')
+
 ## Usage
 
 ```php
