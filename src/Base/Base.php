@@ -17,9 +17,4 @@ class Base
     {
         $this->config = $config;
     }
-
-    public static function __callStatic($name, $arguments)
-    {
-        return static::$name(...$arguments);
-    }
 }
