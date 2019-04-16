@@ -47,8 +47,7 @@ php artisan vendor:publish --provider="Shiran\EasyIp\ServiceProvider"
 进入 config/easyip.php
 ```php
 return [
-    // 选择你所使用的平台，比如 tencent
-    'provider' => '',
+    'provider' => 'tencent',
 
 
     'tencent' => [
