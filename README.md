@@ -5,13 +5,13 @@
 ![StyleCI build status](https://github.styleci.io/repos/181667367/shield) 
 
 
-## Installing
+## 安装
 
 ```shell
 $ composer require shiran/easyip -vvv
 ```
 
-## Description
+## 介绍
 目前支持 5 家平台  
 * 腾讯 [Tencent](https://lbs.qq.com/webservice_v1/guide-ip.html)
 * 淘宝 [Taobao](http://ip.taobao.com/)
@@ -19,7 +19,7 @@ $ composer require shiran/easyip -vvv
 * 聚合 [Juhe](https://www.juhe.cn/docs/api/id/1)
 * 高德 [Amap](https://lbs.amap.com/api/webservice/guide/api/ipconfig)
 
-## Usage
+## 使用
 
 ```php
 $config = [
