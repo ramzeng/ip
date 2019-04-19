@@ -8,7 +8,7 @@
 ## 安装
 
 ```shell
-$ composer require shiran/easyip -vvv
+$ composer require icecho/easyip -vvv
 ```
 
 ## 介绍
@@ -33,7 +33,7 @@ $config = [
     ...
 ];
 
-$ip = new \Shiran\EasyIp\EasyIp($config);
+$ip = new \Icecho\EasyIp\EasyIp($config);
 
 $result = $ip->parse('');
 ```
@@ -41,7 +41,7 @@ $result = $ip->parse('');
 ### 在 Laravel 中使用
 
 ```bash
-php artisan vendor:publish --provider="Shiran\EasyIp\ServiceProvider"
+php artisan vendor:publish --provider="Icecho\EasyIp\ServiceProvider"
 ```
 
 进入 config/easyip.php

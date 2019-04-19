@@ -1,20 +1,20 @@
 <?php
 
 /*
- * This file is part of the shiran/easyip.
+ * This file is part of the Icecho/easyip.
  *
- * (c) shiran <iymiym@icloud.com>
+ * (c) Icecho <iymiym@icloud.com>
  *
  * This source file is subject to the MIT license that is bundled
  * with this source code in the file LICENSE.
  */
 
-namespace Shiran\EasyIp\Providers\Amap;
+namespace Icecho\EasyIp\Providers\Amap;
 
 use Zttp\Zttp;
-use Shiran\EasyIp\Base\Base;
-use Shiran\EasyIp\Contracts\Resolvable;
-use Shiran\EasyIp\Exception\ReferenceException;
+use Icecho\EasyIp\Base\Base;
+use Icecho\EasyIp\Contracts\Resolvable;
+use Icecho\EasyIp\Exception\ReferenceException;
 
 class Amap extends Base implements Resolvable
 {

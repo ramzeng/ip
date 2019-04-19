@@ -1,10 +1,10 @@
 {
-    "name": "shiran/easyip",
+    "name": "icecho/easyip",
     "description": "Package description here.",
     "license": "MIT",
     "authors": [
         {
-            "name": "shiran",
+            "name": "icecho",
             "email": "iymiym@icloud.com"
         }
     ],
@@ -13,13 +13,13 @@
     },
     "autoload": {
         "psr-4": {
-            "Shiran\\EasyIp\\": "src"
+            "Icecho\\EasyIp\\": "src"
         }
     },
     "extra": {
         "laravel": {
             "providers": [
-                "Shiran\\EasyIp\\ServiceProvider"
+                "Icecho\\EasyIp\\ServiceProvider"
             ]
         }
     }

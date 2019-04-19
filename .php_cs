@@ -1,8 +1,8 @@
 <?php
 $header = <<<EOF
-This file is part of the shiran/easyip.
+This file is part of the Icecho/easyip.
 
-(c) shiran <iymiym@icloud.com>
+(c) Icecho <iymiym@icloud.com>
 
 This source file is subject to the MIT license that is bundled.
 EOF;
