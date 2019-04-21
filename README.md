@@ -70,6 +70,8 @@ app('EasyIp')->parse('')
 
 数据返回格式
 ```
+如果想要 api 原生格式，在 config/easyip.php 中，把 format 改为 false
+
 [
      "provider" => "Tencent",
      "ip" => "",
