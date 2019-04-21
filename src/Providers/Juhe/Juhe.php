@@ -73,6 +73,10 @@ class Juhe extends Base implements Resolvable
      */
     public function format()
     {
+        if ($this->config['format'] === false) {
+            return $this->response;
+        }
+
         $result = $this->response['result'];
 
         return [

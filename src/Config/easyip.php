@@ -13,6 +13,8 @@ return [
     // 使用的服务提供者
     'provider' => '',
 
+    'format' => true,
+
     'tencent' => [
         'key' => '',
     ],

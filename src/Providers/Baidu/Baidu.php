@@ -74,6 +74,10 @@ class Baidu extends Base implements Resolvable
      */
     public function format()
     {
+        if ($this->config['format'] === false) {
+            return $this->response;
+        }
+
         $result = $this->response['content'];
 
         $country = false !== strpos($this->response['address'], 'CN') ? '中国' : '';
