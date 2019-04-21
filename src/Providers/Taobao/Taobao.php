@@ -1,9 +1,9 @@
 <?php
 
 /*
- * This file is part of the Icecho/easyip.
+ * This file is part of the icecho/easyip.
  *
- * (c) Icecho <iymiym@icloud.com>
+ * (c) icecho <iymiym@icloud.com>
  *
  * This source file is subject to the MIT license that is bundled
  * with this source code in the file LICENSE.
@@ -72,7 +72,7 @@ class Taobao extends Base implements Resolvable
      */
     public function format()
     {
-        if ($this->config['format'] === false) {
+        if (false === $this->config['format']) {
             return $this->response;
         }
 
